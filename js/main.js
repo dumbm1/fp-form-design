@@ -57,24 +57,30 @@
       opts.rasterize_type = _getSelected('__rasterize-type__');
       opts.special_notes = _getSelected('__special-notes__');
 
+      opts.print_machine = _getSelected('__print-machine__');
+      opts.designer = _getSelected('__designer__');
+      opts.order_number = _getInputs('__order-number__');
+      opts.order_title = _getInputs('__order-title__');
+      opts.order_version = _getInputs('__order-version__');
+
       function _getInputs(divId) {
 
-        let colors = [];
-        let div_color_inputs = document.getElementById(divId).getElementsByTagName('input');
-        for (let i = 0; i < div_color_inputs.length; i++) {
-          let elem = div_color_inputs[i];
-          colors.push(elem.value.replace('-', '—'));
+        let elems = [];
+        let divElemInputs = document.getElementById(divId).getElementsByTagName('input');
+        for (let i = 0; i < divElemInputs.length; i++) {
+          let elem = divElemInputs[i];
+          elems.push(elem.value.replace('-', '—'));
         }
-        return colors;
+        return elems;
       }
 
       function _getSelected(divId) {
         let selectedValues = [];
 
-        let lineature_selections = document.getElementById(divId).getElementsByTagName('select');
+        let elemSelections = document.getElementById(divId).getElementsByTagName('select');
 
-        for (let i = 0; i < lineature_selections.length; i++) {
-          let sel = lineature_selections[i];
+        for (let i = 0; i < elemSelections.length; i++) {
+          let sel = elemSelections[i];
           selectedValues.push(sel.options[sel.selectedIndex].value.replace('-', '—'));
         }
         return selectedValues;

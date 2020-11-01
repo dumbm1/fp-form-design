@@ -7,10 +7,12 @@
  <link rel="stylesheet" href="css/fp-form-design.css">
  <title>FlexoPrint designer form</title>
 
- <style type="text/css">
+ <style>
   body {
    overflow : hidden;
   }
+
+
 
  </style>
 
@@ -18,6 +20,34 @@
 <body>
 
 <form id="fp-form-design" class="fp-form-design">
+
+ <div class="fp-form-design__row" style="text-align: center">
+  <span style="font-size: 1.1rem; font-weight: bold; font-family: Sans-Serif; float: left">Карта дизайнера</span>
+  <div id="__order-number__" style="display: inline-block">
+   <label style="align-self: center"># <input id="__order-number-value__" type="number"></label>
+  </div>
+  <div id="__print-machine__" style="display: inline-block; float: right">
+   <select name="print-machine" id="__print-machine-select__">
+    <option value=""></option>
+    <option value="SOLOFLEX800">SOLOFLEX800</option>
+    <option value="MIRAFLEX 1000">MIRAFLEX 1000</option>
+    <option value="MIRAFLEX_S">MIRAFLEX_S</option>
+    <option value="PRIMAFLEX">PRIMAFLEX</option>
+   </select></div>
+ </div>
+ </div>
+
+ <div class="fp-form-design__row">
+  <div id="__order-title__">
+   <label>Наименование продукции </label><input id="__order-title-value__" type="text">
+  </div>
+ </div>
+ <div class="fp-form-design__row">
+  <div id="__order-version__" style="display: inline-block;">
+   <label>Вариант <input id="__order-version-value__" type="text"></label>
+  </div>
+ </div>
+
  <div class="fp-form-design__row">
   <div id="__section-numbers__" class="fp-form-design__row-content">
    <label class="fp-form-design__label">Кол. форм</label>
@@ -30,7 +60,6 @@
    <label class="fp-form-design__section-numbers-title">7</label>
    <label class="fp-form-design__section-numbers-title">8</label>
    <label class="fp-form-design__section-numbers-title">9</label>
-
   </div>
  </div>
 
@@ -48,6 +77,7 @@
    <input type="text" id="__color_9__">
   </div>
  </div>
+
  <div class="fp-form-design__row">
   <div id="__lineature__" class="fp-form-design__row-content">
    <label class="fp-form-design__label">Линиат.</label>
@@ -215,6 +245,7 @@
    </select>
   </div>
  </div>
+
  <div class="fp-form-design__row">
   <div id="__raster-angle__" class="fp-form-design__row-content">
    <label class="fp-form-design__label">Угол</label>
@@ -292,6 +323,7 @@
    </select>
   </div>
  </div>
+
  <div class="fp-form-design__row">
   <div id="__min-raster-percent__" class="fp-form-design__row-content">
    <label class="fp-form-design__label">Мин. точка</label>
@@ -585,6 +617,7 @@
    </select>
   </div>
  </div>
+
  <div class="fp-form-design__row">
   <div id="__rasterize-type__" class="fp-form-design__row-content">
    <label class="fp-form-design__label">Тип растр.</label>
@@ -644,6 +677,7 @@
    </select>
   </div>
  </div>
+
  <div class="fp-form-design__row">
   <div id="__special-notes__" class="fp-form-design__row-content">
    <label class="fp-form-design__label">Особ. отм.</label>
@@ -793,6 +827,20 @@
    </select>
   </div>
  </div>
+
+ <div class="fp-form-design__row">
+
+  <div id="__designer__" style="display: inline-block">
+   <label>Дизайнер </label>
+   <select name="designer" id="__designer-select__">
+    <option value=""></option>
+    <option value="Шагиев М.">Шагиев Марат</option>
+    <option value="Какареко Л.">Какареко Елена</option>
+   </select>
+  </div>
+
+ </div>
+
  <div class="fp-form-design__buttons-block">
   <input id="__btn_clear-form__" class="fp-form-design__button" type="button" value="Очистить">
   <input disabled id="__btn_from-template__" class="fp-form-design__button" type="button" value="Шаблон">
@@ -800,6 +848,7 @@
   <input id="__btn_ok__" class="fp-form-design__button" type="button" value="ОК!">
   <input id="__btn_reload_panel__" class="fp-form-design__button" type="button" value="Reboot">
  </div>
+
 </form>
 
 <script src="js/lib/CSInterface.js"></script>

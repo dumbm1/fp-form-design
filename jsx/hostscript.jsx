@@ -11,7 +11,7 @@ function main(opts) {
     var minRasterPercentTextItems = lays.getByName('__min-raster-percent__').groupItems[0].textFrames;
     var rasterizeTypeTextItems = lays.getByName('__rasterize-type__').groupItems[0].textFrames;
     var specialNotesTextItems = lays.getByName('__special-notes__').groupItems[0].textFrames;
-  } catch (e) {alert(e + '\n' + 'fuck1') }
+  } catch (e) {alert(e + '\n' + 'fuck1'); }
 
   try {
     for (var i = SECTION_NUM - 1, j = 0; i >= 0; i--, j++) {
@@ -20,7 +20,22 @@ function main(opts) {
       rasterAngleTextItems[i].contents = opts.raster_angle[j];
       minRasterPercentTextItems[i].contents = opts.min_raster_percent[j];
       rasterizeTypeTextItems[i].contents = opts.rasterize_type[j];
-      specialNotesTextItems[i].contents = opts.special_notes[j].replace(/(\d)/,'($1)');
+      specialNotesTextItems[i].contents = opts.special_notes[j].replace(/(\d)/, '($1)');
     }
-  } catch (e) {alert(e + '\n' + 'fuck2') }
+  } catch (e) {alert(e + '\n' + 'fuck2'); }
+
+  try {
+    var fromBaseFrames = lays.getByName('__var-from-base__').groupItems[0].textFrames;
+    var orderTitle = fromBaseFrames.getByName('__order-title__');
+    var orderNumber = fromBaseFrames.getByName('__order-number__');
+    var orderVersion = fromBaseFrames.getByName('__order-version__');
+    var printMachine = fromBaseFrames.getByName('__print-machine__');
+    var designer = fromBaseFrames.getByName('__designer__');
+
+    orderTitle.contents = opts.order_title[0];
+    orderNumber.contents = opts.order_number[0];
+    orderVersion.contents = opts.order_version[0];
+    printMachine.contents = opts.print_machine[0];
+    designer.contents = opts.designer[0];
+  } catch (e) {alert(e + '\n' + 'fuck3'); }
 }
