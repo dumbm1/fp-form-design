@@ -1,4 +1,7 @@
+//@include mkFormDesign.jsx
+
 function main(opts) {
+
   var d = activeDocument;
   var lays = d.layers;
   var SECTION_NUM = 9;

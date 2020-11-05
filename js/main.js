@@ -29,6 +29,15 @@
 
     $('form').sisyphus({timeout: 5});
 
+    $('#__btn_from-template__').click(()=>{
+      try {
+        csInterface.evalScript('mkFormDesign()', function (result) {
+        });
+      } catch (err) {
+        // alert(err);
+      }
+    });
+
     $('#__btn_ok__').click(() => {
       let opts = makeOpts();
       try {
