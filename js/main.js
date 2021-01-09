@@ -29,6 +29,23 @@
 
     $('form').sisyphus({timeout: 5});
 
+    $('.__lineature__').change(function () {
+      let val = $(this).val();
+      let indx = $(this).index();
+
+      if (val == '-') {
+        $('#__angle_' + indx + '__').val(val);
+        $('#__min-percent_' + indx + '__').val(val);
+        $('#__rasterization_' + indx + '__').val(val);
+      }
+      if (val == '') {
+        $('#__angle_' + indx + '__').val(val);
+        $('#__min-percent_' + indx + '__').val(val);
+        $('#__rasterization_' + indx + '__').val(val);
+        $('#__color_' + indx + '__').val(val);
+      }
+    });
+
     $('#__btn_from-template__').click(() => {
       try {
         csInterface.evalScript('mkFormDesign()', function (result) {

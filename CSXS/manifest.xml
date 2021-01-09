@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ExtensionManifest Version="4.0"
                    ExtensionBundleId="com.ai_fp-form-design"
-                   ExtensionBundleVersion="1.2.1"
+                   ExtensionBundleVersion="1.2.2"
                    ExtensionBundleName="input-blank-design"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Author>
@@ -18,7 +18,7 @@
     </Abstract>
 
     <ExtensionList>
-        <Extension Id="com.ai_fp-form-design" Version="1.2.1"/>
+        <Extension Id="com.ai_fp-form-design" Version="1.2.2"/>
     </ExtensionList>
     <ExecutionEnvironment>
         <HostList>
@@ -43,7 +43,7 @@
                 </Lifecycle>
                 <UI>
                     <Type>Panel</Type>
-                    <Menu>ai_fp-form-design 1.2.1</Menu>
+                    <Menu>ai_fp-form-design 1.2.2</Menu>
                     <Geometry>
                         <Size>
                             <Width>710</Width>
