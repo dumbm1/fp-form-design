@@ -7,6 +7,12 @@ function main(opts) {
   var SECTION_NUM = 9;
   var testArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
 
+  if (!d.name.match('fp-form-designer')) {
+    // throw new Error('Make template and go to the template document/tab');
+    alert('Make template and go to the template document/tab');
+    return;
+  }
+
   try {
     var colorTextItems = lays.getByName('__color__').groupItems[0].textFrames;
     var lineatureTextItems = lays.getByName('__lineature__').groupItems[0].textFrames;
@@ -14,7 +20,11 @@ function main(opts) {
     var minRasterPercentTextItems = lays.getByName('__min-raster-percent__').groupItems[0].textFrames;
     var rasterizeTypeTextItems = lays.getByName('__rasterize-type__').groupItems[0].textFrames;
     var specialNotesTextItems = lays.getByName('__special-notes__').groupItems[0].textFrames;
-  } catch (e) {alert(e + '\n' + 'fuck1'); }
+  } catch (e) {
+    // throw new Error('Incorrect template layers structure');
+    alert('Incorrect template layers structure');
+    return;
+  }
 
   try {
     for (var i = SECTION_NUM - 1, j = 0; i >= 0; i--, j++) {
@@ -25,7 +35,11 @@ function main(opts) {
       rasterizeTypeTextItems[i].contents = opts.rasterize_type[j];
       specialNotesTextItems[i].contents = opts.special_notes[j].replace(/(\d)/, '($1)');
     }
-  } catch (e) {alert(e + '\n' + 'fuck2'); }
+  } catch (e) {
+    // throw new Error('Error2');
+    alert('Error2');
+    return;
+  }
 
   try {
     var fromBaseFrames = lays.getByName('__var-from-base__').groupItems[0].textFrames;
@@ -40,5 +54,9 @@ function main(opts) {
     orderVersion.contents = opts.order_version[0];
     printMachine.contents = opts.print_machine[0];
     designer.contents = opts.designer[0];
-  } catch (e) {alert(e + '\n' + 'fuck3'); }
+  } catch (e) {
+    // throw new Error('Error3');
+    alert('Error3');
+    return;
+  }
 }

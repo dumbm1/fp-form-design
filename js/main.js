@@ -29,7 +29,7 @@
 
     $('form').sisyphus({timeout: 5});
 
-    $('#__btn_from-template__').click(()=>{
+    $('#__btn_from-template__').click(() => {
       try {
         csInterface.evalScript('mkFormDesign()', function (result) {
         });
@@ -69,28 +69,41 @@
       opts.print_machine = _getSelected('__print-machine__');
       opts.designer = _getSelected('__designer__');
       opts.order_number = _getInputs('__order-number__');
-      opts.order_title = _getInputs('__order-title__');
+      opts.order_title = _getInputs('__order-title__', false);
       opts.order_version = _getInputs('__order-version__');
 
-      function _getInputs(divId) {
+      function _getInputs(divId, replaceVal) {
 
         let elems = [];
         let divElemInputs = document.getElementById(divId).getElementsByTagName('input');
         for (let i = 0; i < divElemInputs.length; i++) {
           let elem = divElemInputs[i];
-          elems.push(elem.value.replace('-', '—'));
+          let val = elem.value;
+          if (arguments[1] === false) {
+            elems.push(val);
+            continue;
+          }
+          elems.push(val.replace('-', '—'));
         }
         return elems;
       }
 
-      function _getSelected(divId) {
+      function _getSelected(divId, replaceVal) {
         let selectedValues = [];
 
         let elemSelections = document.getElementById(divId).getElementsByTagName('select');
 
         for (let i = 0; i < elemSelections.length; i++) {
           let sel = elemSelections[i];
-          selectedValues.push(sel.options[sel.selectedIndex].value.replace('-', '—'));
+          let val = sel.options[sel.selectedIndex].value;
+
+          if (arguments[1] === false) {
+            selectedValues.push(val);
+            continue;
+          }
+
+          selectedValues.push(val.replace('-', '—'));
+
         }
         return selectedValues;
       }
