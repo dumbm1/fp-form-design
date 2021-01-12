@@ -43,6 +43,7 @@
         $('#__min-percent_' + indx + '__').val(val);
         $('#__rasterization_' + indx + '__').val(val);
         $('#__color_' + indx + '__').val(val);
+        $('#__special-notes_' + indx + '__').val(val);
       }
     });
 
