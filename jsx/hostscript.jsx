@@ -7,9 +7,9 @@ function main(opts) {
   var SECTION_NUM = 9;
   var testArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
 
-  if (!d.name.match('fp-form-designer')) {
+  if (!d) {
     // throw new Error('Make template and go to the template document/tab');
-    alert('Make template and go to the template document/tab');
+    alert('Document expected');
     return;
   }
 
