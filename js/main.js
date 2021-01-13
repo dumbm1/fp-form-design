@@ -29,6 +29,10 @@
 
     $('form').sisyphus({timeout: 5});
 
+    $('#__color__ input').focus(function () {
+      $(this).select();
+    });
+
     $('.__lineature__').change(function () {
       let val = $(this).val();
       let indx = $(this).index();
