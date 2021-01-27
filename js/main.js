@@ -81,7 +81,7 @@
 
     function makeOpts() {
       let opts = {};
-      opts.color = _getInputs('__color__');
+      opts.color = _getInputs('__color__', false);
       opts.lineature = _getSelected('__lineature__');
       opts.raster_angle = _getSelected('__raster-angle__');
       opts.min_raster_percent = _getSelected('__min-raster-percent__');
