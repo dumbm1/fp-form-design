@@ -6,6 +6,8 @@ function main(opts) {
   var lays = d.layers;
   var SECTION_NUM = 9;
   var testArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
+  var docName = opts.order_number + ' ' + opts.order_title;
+  d.name = docName;
 
   if (!d) {
     // throw new Error('Make template and go to the template document/tab');
@@ -22,7 +24,7 @@ function main(opts) {
     var specialNotesTextItems = lays.getByName('__special-notes__').groupItems[0].textFrames;
   } catch (e) {
     // throw new Error('Incorrect template layers structure');
-    alert('Incorrect template layers structure');
+    alert('Incorrect template layers structure. \n How to use: \n1. Fill the form.\n2. Push button "Template".\n2. Push button "Ok"');
     return;
   }
 

@@ -52,8 +52,9 @@
     });
 
     $('#__btn_from-template__').click(() => {
+      let opts = makeOpts();
       try {
-        csInterface.evalScript('mkFormDesign()', function (result) {
+        csInterface.evalScript('mkFormDesign(' + JSON.stringify(opts) + ')', function (result) {
         });
       } catch (err) {
         // alert(err);
