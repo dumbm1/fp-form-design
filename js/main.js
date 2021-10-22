@@ -25,9 +25,22 @@
                          });
                        }
                      });
+
     $('body').disableSelection();
 
     $('form').sisyphus({timeout: 5});
+
+    csInterface.evalScript('getPaths()', function (result) {
+      let pathList = result.split();
+      function insertPathList(pathList) {
+        for (let key in pathList) {
+          let optPath = document.createElement('option');
+          optPath.innerHTML = pathList[key].name;
+          optPath.selected = false;
+          document.getElementById('sel_font').appendChild(optPath);
+        }
+      }
+    });
 
     $('#__color__ input').focus(function () {
       $(this).select();

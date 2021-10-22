@@ -62,3 +62,14 @@ function main(opts) {
     return;
   }
 }
+
+function getPaths() {
+  var openDocs = documents;
+  var docsPath = [];
+  for (var i = 0; i < openDocs.length; i++) {
+    var doc = openDocs[i];
+    if (doc.path == '') continue;
+    docsPath.push(doc.path);
+  }
+  return docsPath;
+}
