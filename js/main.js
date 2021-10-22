@@ -56,6 +56,14 @@
       try {
         csInterface.evalScript('mkFormDesign(' + JSON.stringify(opts) + ')', function (result) {
         });
+
+        setTimeout(function ff() {
+          try {
+            csInterface.evalScript('main(' + JSON.stringify(opts) + ')', function (result) {});
+          } catch (err) {
+            //alert(err);
+          }
+        }, 3000);
       } catch (err) {
         // alert(err);
       }
@@ -64,10 +72,18 @@
     $('#__btn_ok__').click(() => {
       let opts = makeOpts();
       try {
-        csInterface.evalScript('main(' + JSON.stringify(opts) + ')', function (result) {
+        csInterface.evalScript('mkFormDesign(' + JSON.stringify(opts) + ')', function (result) {
         });
+
+        setTimeout(function ff() {
+          try {
+            csInterface.evalScript('main(' + JSON.stringify(opts) + ')', function (result) {});
+          } catch (err) {
+            //alert(err);
+          }
+        }, 3000);
       } catch (err) {
-        //alert(err);
+        // alert(err);
       }
     });
 
