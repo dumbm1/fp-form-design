@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ExtensionManifest Version="4.0"
                    ExtensionBundleId="com.ai_fp-form-design"
-                   ExtensionBundleVersion="1.4.0"
+                   ExtensionBundleVersion="1.4.1"
                    ExtensionBundleName="input-blank-design"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Author>
@@ -14,11 +14,15 @@
         <![CDATA[Legal stuff...]]>
     </Legal>
     <Abstract href="https://github.com/dumbm1/ai_fp-form-design">
-        <![CDATA[FlexoPrint layout to output]]>
+        <![CDATA[
+FlexoPrint layout to output.
+changes:
+1.4.1 fix bug with doublequotes in file name
+]]>
     </Abstract>
 
     <ExtensionList>
-        <Extension Id="com.ai_fp-form-design" Version="1.4.0"/>
+        <Extension Id="com.ai_fp-form-design" Version="1.4.1"/>
     </ExtensionList>
     <ExecutionEnvironment>
         <HostList>
@@ -43,7 +47,7 @@
                 </Lifecycle>
                 <UI>
                     <Type>Panel</Type>
-                    <Menu>ai_fp-form-design 1.4.0</Menu>
+                    <Menu>ai_fp-form-design 1.4.1</Menu>
                     <Geometry>
                         <Size>
                             <Width>710</Width>

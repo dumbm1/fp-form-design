@@ -7,7 +7,7 @@ function main(opts) {
   var SECTION_NUM = 9;
   var testArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
   var docName = opts.order_number + ' ' + opts.order_title;
-  d.name = docName;
+  d.name = docName.replace(/"/gmi, '');
 
   if (!d) {
     // throw new Error('Make template and go to the template document/tab');

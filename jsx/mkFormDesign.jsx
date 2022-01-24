@@ -7,7 +7,7 @@ function mkFormDesign(opts) {
   var fileName = opts.order_number + '_' + opts.order_title;
 
   if (fileName != '_') {
-    aiFile = new File(Folder.temp + '/' + fileName + '.ai');
+    aiFile = new File(Folder.temp + '/' + fileName.replace(/"/gmi, '') + '.ai');
   } else {
     aiFile = new File(Folder.temp + "/fp-form-designer_" + _randStr(6) + "_.ai");
   }
