@@ -1,6 +1,8 @@
 *~
 *.ini
 test*.jsx
+_test/*
+_test*
 
 #ignore all files in folder "tmpl"
 img/**/tmpl/*

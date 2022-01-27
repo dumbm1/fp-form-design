@@ -32,6 +32,7 @@
 
     csInterface.evalScript('getPaths()', function (result) {
       let pathList = result.split();
+
       function insertPathList(pathList) {
         for (let key in pathList) {
           let optPath = document.createElement('option');
@@ -101,6 +102,10 @@
     });
 
     $('#__btn_clear-form__').click(function () {
+      let isConfirm = confirm('!!! ВНИМАНИЕ !!!\n' + 'Операция НЕОБРАТИМА!\n' +
+                                'Уверены, что хотите очистить все поля формы?');
+      if (!isConfirm) return;
+
       localStorage.clear();
       location.reload();
     });

@@ -19,7 +19,7 @@
 
 <form id="fp-form-design" class="fp-form-design">
 
- <div class="fp-form-design__row" style="text-align: center">
+ <div class="fp-form-design__row fp-form-design__extend-air" style="text-align: center">
   <span style="font-size: 1.1rem; font-weight: bold; font-family: Sans-Serif; float: left">Карта дизайнера</span>
   <div id="__order-number__" style="display: inline-block">
    <label style="align-self: center"># <input id="__order-number-value__" type="number"></label>
@@ -37,18 +37,18 @@
  </div>
  </div>
 
- <div class="fp-form-design__row">
+ <div class="fp-form-design__row fp-form-design__extend-air">
   <div id="__order-title__">
-   <label>Наименование продукции </label><input id="__order-title-value__" type="text">
+   <label class="fp-form-design__label">Наименование продукции </label><input id="__order-title-value__" type="text">
   </div>
  </div>
- <div class="fp-form-design__row">
+ <div class="fp-form-design__row fp-form-design__extend-air">
   <div id="__order-version__" style="display: inline-block;">
-   <label>Вариант <input id="__order-version-value__" type="text"></label>
+   <label class="fp-form-design__label">Вариант <input id="__order-version-value__" type="text"></label>
   </div>
  </div>
 
- <div class="fp-form-design__row">
+ <div class="fp-form-design__row fp-form-design__extend-air">
   <div id="__section-numbers__" class="fp-form-design__row-content">
    <label class="fp-form-design__label">Кол. форм</label>
    <label class="fp-form-design__section-numbers-title">1</label>
@@ -828,32 +828,37 @@
   </div>
  </div>
 
- <div class="fp-form-design__row">
+ <div class="fp-form-design__row fp-form-design__extend-air">
 
   <div id="__designer__" style="display: inline-block">
-   <label>Дизайнер </label>
+   <label class="fp-form-design__label">Дизайнер </label>
    <select name="designer" id="__designer-select__">
     <option value=""></option>
     <option value="Шагиев М.">Шагиев Марат</option>
     <option value="Какареко Л.">Какареко Елена</option>
    </select>
   </div>
+
+ </div>
+
+ <div class="fp-form-design__row fp-form-design__extend-air">
   <div style="display: inline-block">
-   <lebel>Путь сохранения </lebel>
+   <lebel class="fp-form-design__label">Путь сохранения</lebel>
    <select name="docs-list" id="__docs-select__">
     <option value=""></option>
    </select>
   </div>
-
  </div>
 
- <div class="fp-form-design__buttons-block">
-  <input id="__btn_clear-form__" class="fp-form-design__button" type="button" value="Очистить">
+ <div class="fp-form-design__buttons-block fp-form-design__extend-air">
+  <input id="__btn_ok__" class="fp-form-design__button" type="button" value="ОК, GO!"
+         title="Заполнить шаблон данными из формы. Для этого сначала заполните форму и сгенерируйте шаблон.">
+
   <!--  <input id="__btn_from-template__" class="fp-form-design__button" type="button" value="Шаблон" title="Сгенерировать пустой шаблон">-->
   <!--  <input disabled id="__btn_load-defaults" class="fp-form-design__button" type="button" value="Умолчания">-->
-  <input id="__btn_ok__" class="fp-form-design__button" type="button" value="ОК!"
-         title="Заполнить шаблон данными из формы. Для этого сначала заполните форму и сгенерируйте шаблон.">
+
   <input id="__btn_reload_panel__" class="fp-form-design__button" type="button" value="Reboot">
+  <input id="__btn_clear-form__" class="fp-form-design__button" type="button" value="Очистить">
  </div>
 
 </form>
