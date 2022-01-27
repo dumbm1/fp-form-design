@@ -102,9 +102,11 @@
     });
 
     $('#__btn_clear-form__').click(function () {
-      let isConfirm = confirm('!!! ВНИМАНИЕ !!!\n' + 'Операция НЕОБРАТИМА!\n' +
+      var isConfirm = confirm('!!! ВНИМАНИЕ !!!\n' + 'Операция НЕОБРАТИМА!\n' +
                                 'Уверены, что хотите очистить все поля формы?');
-      if (!isConfirm) return;
+
+
+      if (isConfirm === false) return;
 
       localStorage.clear();
       location.reload();
