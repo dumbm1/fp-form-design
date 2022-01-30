@@ -5,11 +5,15 @@ function mkFormDesign(opts) {
 
   var aiFile;
   var fileName = opts.order_number + '_' + opts.order_title;
+  var filePath = opts.filePath || Folder.temp;
+  // if(filePath == '') filePath = Folder.temp;
+
 
   if (fileName != '_') {
-    aiFile = new File(Folder.temp + '/' + fileName.replace(/"/gmi, '') + '.ai');
+    if(!(new Folder (filePath + '/kd/').exists)) new Folder (filePath + '/kd/').create();
+    aiFile = new File(filePath + '/kd/' + fileName.replace(/"/gmi, '') + '.ai');
   } else {
-    aiFile = new File(Folder.temp + "/fp-form-designer_" + _randStr(6) + "_.ai");
+    aiFile = new File(filePath + "/fp-form-designer_" + _randStr(6) + "_.ai");
   }
 
   aiFile.encoding = 'BINARY';

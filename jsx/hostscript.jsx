@@ -63,13 +63,22 @@ function main(opts) {
   }
 }
 
+function getCustomFolder() {
+  return Folder.selectDialog();
+}
+
 function getPaths() {
   var openDocs = documents;
   var docsPath = [];
   for (var i = 0; i < openDocs.length; i++) {
     var doc = openDocs[i];
     if (doc.path == '') continue;
-    docsPath.push(doc.path);
+    if(('' + doc.path).slice(-3) === '/kd') {
+      docsPath.push(('' + doc.path).slice(0, -3));
+    } else {
+      docsPath.push(doc.path);
+    }
+
   }
   return docsPath;
 }

@@ -31,17 +31,45 @@
     $('form').sisyphus({timeout: 5});
 
     csInterface.evalScript('getPaths()', function (result) {
-      let pathList = result.split();
+      let pathList = result;
+      pathList = pathList.split(',');
 
-      function insertPathList(pathList) {
-        for (let key in pathList) {
+      /**
+       * rm doubles from array
+       * from Grundy: https://ru.stackoverflow.com/questions/539941/Как-удалить-из-массива-повторяющиеся-элементы/539942
+       * */
+      pathList = Array.from(new Set(pathList));
+
+      _insertPathList(pathList);
+
+      function _insertPathList(pathList) {
+        let docsSelectElem = document.getElementById('__docs-select__');
+
+        // docsSelectElem.innerHTML = '';
+
+        for (let i = 0; i < pathList.length; i++) {
           let optPath = document.createElement('option');
-          optPath.innerHTML = pathList[key].name;
+          optPath.innerHTML = pathList[i];
           optPath.selected = false;
-          document.getElementById('sel_font').appendChild(optPath);
+          docsSelectElem.append(optPath);
         }
+
+        docsSelectElem.selectedIndex = 0;
+
       }
     });
+
+    $('#__btn_add-path__').click(()=>{
+      let opts = makeOpts();
+        csInterface.evalScript('getCustomFolder(' + JSON.stringify(opts) + ')', function (result) {
+          let docsSelectElem = document.getElementById('__docs-select__');
+          let customFolderPath = result;
+          let optPath = document.createElement('option');
+          optPath.innerHTML = customFolderPath;
+          optPath.selected = true;
+          docsSelectElem.append(optPath);
+        });
+    })
 
     $('#__color__ input').focus(function () {
       $(this).select();
@@ -105,7 +133,6 @@
       var isConfirm = confirm('!!! ВНИМАНИЕ !!!\n' + 'Операция НЕОБРАТИМА!\n' +
                                 'Уверены, что хотите очистить все поля формы?');
 
-
       if (isConfirm === false) return;
 
       localStorage.clear();
@@ -130,6 +157,7 @@
       opts.order_number = _getInputs('__order-number__');
       opts.order_title = _getInputs('__order-title__', false);
       opts.order_version = _getInputs('__order-version__');
+      opts.filePath = document.getElementById('__docs-select__').options[document.getElementById('__docs-select__').selectedIndex].value;
 
       function _getInputs(divId, replaceVal) {
 
